@@ -26,11 +26,11 @@ public class Tasker {
      * The method returns a BeltTask object that can be used to access information about the scheduled task and control its execution.
      *
      * @param runnable the task to be executed after the specified delay
-     * @param after the delay in milliseconds
+     * @param after the delay in ticks
      * @return a BeltTask object representing the scheduled task
      */
     public static BeltTask runLater(final Runnable runnable, final long after) {
-        return BeltTask.fromBukkit(Bukkit.getScheduler().runTaskLater(Belt.getInstance(), runnable, 1));
+        return BeltTask.fromBukkit(Bukkit.getScheduler().runTaskLater(Belt.getInstance(), runnable, after));
     }
 
     /**
